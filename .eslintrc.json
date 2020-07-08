@@ -1,0 +1,43 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "env": {
+    "node": true,
+    "jest/globals": true
+  },
+  "extends": [
+    "airbnb-typescript/base",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:import/errors",
+    "plugin:import/typescript",
+    "plugin:import/warnings",
+    "plugin:prettier/recommended",
+    "prettier",
+    "prettier/@typescript-eslint"
+  ],
+  "plugins": ["@mysticatea", "@typescript-eslint", "import", "jest", "tsc"],
+  "rules": {
+    "@mysticatea/block-scoped-var": "error",
+    "@mysticatea/no-instanceof-array": "error",
+    "@mysticatea/no-instanceof-wrapper": "error",
+    "@mysticatea/no-literal-call": "error",
+    "@mysticatea/no-this-in-static": "error",
+    "@mysticatea/no-use-ignored-vars": "error",
+    "@mysticatea/no-useless-rest-spread": "error",
+    "tsc/config": [
+      1,
+      {
+        "configFile": "tsconfig.json"
+      }
+    ],
+    "jest/no-disabled-tests": "warn",
+    "jest/no-focused-tests": "error",
+    "jest/no-identical-title": "error",
+    "jest/prefer-to-have-length": "warn",
+    "jest/valid-expect": "error",
+    "curly": ["error", "all"],
+    "sort-imports": ["error", { "ignoreDeclarationSort": true }],
+    "no-console": "off",
+    "lines-between-class-members": "off",
+    "no-await-in-loop": "off"
+  }
+}
