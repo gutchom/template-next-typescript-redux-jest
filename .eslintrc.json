@@ -1,7 +1,29 @@
 {
   "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.json",
+    "tsconfigRootDir": "./"
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    },
+    "import/resolver": {
+      "node": {
+        "paths": ["src"],
+        "extensions": [
+          ".js",
+          ".jsx",
+          ".ts",
+          ".tsx"
+        ]
+      }
+    }
+  },
   "env": {
+    "browser": true,
     "node": true,
+    "es6": true,
     "jest/globals": true
   },
   "extends": [
@@ -10,11 +32,20 @@
     "plugin:import/errors",
     "plugin:import/typescript",
     "plugin:import/warnings",
+    "plugin:react/recommended",
     "plugin:prettier/recommended",
     "prettier",
-    "prettier/@typescript-eslint"
+    "prettier/@typescript-eslint",
+    "prettier/react"
   ],
-  "plugins": ["@mysticatea", "@typescript-eslint", "import", "jest", "tsc"],
+  "plugins": [
+    "@mysticatea",
+    "@typescript-eslint",
+    "import",
+    "react",
+    "jest",
+    "tsc"
+  ],
   "rules": {
     "@mysticatea/block-scoped-var": "error",
     "@mysticatea/no-instanceof-array": "error",
@@ -23,12 +54,48 @@
     "@mysticatea/no-this-in-static": "error",
     "@mysticatea/no-use-ignored-vars": "error",
     "@mysticatea/no-useless-rest-spread": "error",
+    "@typescript-eslint/camelcase": "off",
+    "@typescript-eslint/naming-convention": [
+      "error",
+      {
+        "selector": "default",
+        "format": ["camelCase", "PascalCase"]
+      },
+      {
+        "selector": "class",
+        "format": ["PascalCase"]
+      },
+      {
+        "selector": "function",
+        "format": ["camelCase", "PascalCase"]
+      },
+      {
+        "selector": "parameter",
+        "format": null
+      },
+      {
+        "selector": "typeLike",
+        "format": ["PascalCase"]
+      },
+      {
+        "selector": "property",
+        "format": null
+      },
+      {
+        "selector": "variable",
+        "format": ["camelCase", "PascalCase", "UPPER_CASE"],
+        "leadingUnderscore": "allow",
+        "trailingUnderscore": "allow"
+      }
+    ],
+    "@typescript-eslint/explicit-module-boundary-types": "off",
     "tsc/config": [
       1,
       {
-        "configFile": "tsconfig.json"
+        "configFile": "./tsconfig.json"
       }
     ],
+    "react/prop-types": "off",
     "jest/no-disabled-tests": "warn",
     "jest/no-focused-tests": "error",
     "jest/no-identical-title": "error",
@@ -38,6 +105,9 @@
     "sort-imports": ["error", { "ignoreDeclarationSort": true }],
     "no-console": "off",
     "lines-between-class-members": "off",
-    "no-await-in-loop": "off"
+    "no-await-in-loop": "off",
+    "no-nested-ternary": "off",
+    "class-methods-use-this": "off",
+    "consistent-return": "off"
   }
 }
