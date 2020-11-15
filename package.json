@@ -1,6 +1,13 @@
 {
   "name": "next-ts-redux-jest-template",
   "version": "1.0.0",
+  "author": "gutchom",
+  "license": "MIT",
+  "engines": {
+    "node": "^14.15.0",
+    "npm": "^6.14.8",
+    "yarn": "^1.22.4"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
