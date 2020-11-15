@@ -1,12 +1,9 @@
-import {
-  INCREMENT,
-  RESET,
-} from "actions";
+import { INCREMENT, RESET } from "actions";
 
 export type CounterActions = {
   type: typeof INCREMENT | typeof RESET;
-  num: number
-}
+  num: number;
+};
 
 export type CounterState = {
   count: number;
@@ -22,8 +19,8 @@ export function counter(
 ): CounterState {
   switch (action.type) {
     case INCREMENT:
-      console.log(state.count)
-      console.log(action.num)
+      console.log(state.count);
+      console.log(action.num);
       return { ...state, count: state.count + action.num };
     case RESET:
       return { ...state, count: 0 };

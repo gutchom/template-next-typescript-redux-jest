@@ -1,16 +1,16 @@
-import React from 'react';
-import Head from 'next/head';
+import React from "react";
+import Head from "next/head";
 import { useDispatch, useSelector } from "react-redux";
-import { makeStyles } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
-import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
-import { AppTitle } from 'components/AppTitle'
-import { RootState } from 'reducer'
-import { increment, reset } from 'actions'
+import { makeStyles } from "@material-ui/core/styles";
+import AppBar from "@material-ui/core/AppBar";
+import Toolbar from "@material-ui/core/Toolbar";
+import Typography from "@material-ui/core/Typography";
+import Button from "@material-ui/core/Button";
+import IconButton from "@material-ui/core/IconButton";
+import MenuIcon from "@material-ui/icons/Menu";
+import { AppTitle } from "components/AppTitle";
+import { RootState } from "reducer";
+import { increment, reset } from "actions";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -37,7 +37,12 @@ const Home: React.FC = () => {
 
       <AppBar position="static">
         <Toolbar>
-          <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
+          <IconButton
+            edge="start"
+            className={classes.menuButton}
+            color="inherit"
+            aria-label="menu"
+          >
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" className={classes.title}>
@@ -54,7 +59,7 @@ const Home: React.FC = () => {
         <Button onClick={() => dispatch(reset())}>Reset</Button>
       </main>
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
