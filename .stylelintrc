@@ -1,0 +1,18 @@
+{
+  "processors": ["stylelint-processor-styled-components"],
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-config-recommended",
+    "stylelint-config-styled-components"
+  ],
+  "plugins": [
+    "stylelint-order"
+  ],
+  "rules": {
+    "order/properties-alphabetical-order": true,
+    "order/order": [
+      "custom-properties",
+      "declarations"
+    ]
+  }
+}

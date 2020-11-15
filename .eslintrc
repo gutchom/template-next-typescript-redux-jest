@@ -1,4 +1,5 @@
 {
+  "root": true,
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "project": "./tsconfig.json",
@@ -24,6 +25,7 @@
     "browser": true,
     "node": true,
     "es6": true,
+    "jest": true,
     "jest/globals": true
   },
   "extends": [
